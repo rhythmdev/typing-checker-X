@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,40 +9,68 @@
     <title>Speed Monster Blog</title>
     <link rel="stylesheet" href="/blog.css">
 </head>
+
 <body>
+    <h1>Speed Monster Blog</h1>
     <div>
+
         <details open>
             <summary>
-                How do you create an accordion?
+                What are differences between local storage & session storage?
             </summary>
             <div>
-                Easy! As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> natively.
+                Their main difference is that local storage data does not expire, whereas session storage data gets
+                cleared when the user closes its browser window. Page sessions are valid for only one tab at a time. So,
+                if a user has three tabs open, each one will have its own page session. Since local storage is not
+                session-based, all the data must be deleted via javascript or manually. Local storage is best for
+                storing data you want to keep long term, even after the user has closed the tab or browser.Session
+                storage is best for storing temporary data or data that should only be accessible from one tab.
+
+
             </div>
         </details>
         <details>
             <summary>
-                What if I have to support IE11 or older browsers?
+                What are differences between global scope & local scope?
             </summary>
             <div>
-                No worries. The fallback for these elements is quite good. They will display as open. You won't get the open/close mechanism, but you won't lose any content either.
+                The scope of a variable refers to the area of the script where it appears. There are two types of
+                variables: global and local. A global variable exists only once in a script, and it is visible in every
+                function. The scope of a local variable, however, is limited: it exists only within the block in which
+                it is declared.Global variables can be accessed and modified anywhere in the program. You cannot access
+                local variables outside of the function statement. Global variable and local variable can have the same
+                name without affecting each other. JavaScript does not allow block level scope inside {} brackets.
             </div>
         </details>
         <details>
             <summary>
-                What type of content can I have inside one of these?
+                How does javascript event loop work?
             </summary>
             <div>
-                Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" target="_blank">flow content</a>, which is basically everything.
+                The event loop is a process that waits for the Call Stack to be clear before pushing callbacks from the
+                Task Queue to the Call Stack. Once the Stack is clear, the event loop triggers and checks the Task Queue
+                for available callbacks. If there are any, it pushes it to the Call Stack, waits for the Call Stack to
+                be clear again, and repeats the same process.
+
             </div>
         </details>
         <details>
             <summary>
-                How does it work?
+                How many ways can we get undefined in javascript?
             </summary>
             <div>
-                The <code>&lt;details&gt;</code> element encapsulates the <code>&lt;summary&gt;</code> element. The <code>&lt;summary&gt;</code> becomes the 'label' for the <code>&lt;details&gt;</code> and acts like a button. When clicked, the attribute <code>open</code> is added to the <code>&lt;details&gt;</code> element, making it display. You can therefore style the open and closed states seperately if you'd like.
+                Undefined is a property of the global object. It is a variable in global scope. The initial value of
+                undefined is the primitive value undefined. In all non-legacy browsers, undefined is a non-configurable,
+                non-writable property. (Even when this is not the case, avoid overriding it.).The undefined property
+                indicates that a variable has not been assigned a value, or not declared at all.Accessing an
+                uninitialized variable returns undefined. [Accessing a non-existing property of an object returns
+                undefined. Accessing a out-of-bounds array element returns undefined.A function without a return
+                statement or with a return statement but without an expression returns undefined.]
+
+
             </div>
         </details>
     </div>
 </body>
+
 </html>
